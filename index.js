@@ -25,6 +25,10 @@ app.post('/api/search', async (req, res) => {
     console.log(error);
   })
 })
+
+app.get('/', (req, res) => {
+  res.status(200).send('Hello World!');
+ });
  
  app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
