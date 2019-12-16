@@ -5,22 +5,10 @@ import { Button } from '@material-ui/core'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 class PetListPage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      breed: "", 
-      age_years: 0, 
-      age_months: 0,
-      gender: "",
-      location: ""
-    }
-  }
   
-  selected = (event, object, selectFunc) => {
+  selected = (object, selectFunc) => {
     selectFunc(object);
   }
-
   
   render() {
     return (
@@ -38,8 +26,8 @@ class PetListPage extends Component {
                 <p><b>Location: </b>{object.City}, {object.State}</p>
                 <Link 
                   to="/pet-profile" 
-                  onClick={(event) => {
-                    this.selected(event, object, selectProfile);
+                  onClick={() => {
+                    this.selected(object, selectProfile);
                   }}>
                   <Button
                       variant="contained"
@@ -53,7 +41,7 @@ class PetListPage extends Component {
         
         return (
           <div>
-            <h2 className="text-center list-page">Pet List Page</h2>
+            <h2 className="text-center list-page">Search Results</h2>
             <Link to="/" className="link" id="arrow-new-search"><ArrowBackIcon />Make a new search</Link>
             <div className="cards-list">
               {pet_cards}

@@ -6,17 +6,14 @@ import axios from 'axios'
 
 
 class InputForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      animal_type: "",
-      breed: "",
-      error: false,
-      zip: 0,
-      age: 0,
-      disabled: true,
-      breeds_list: []
-    }
+  state = {
+    animal_type: "",
+    breed: "",
+    error: false,
+    zip: 0,
+    age: 0,
+    disabled: true,
+    breeds_list: []
   }
   
   zipChange = event => {
@@ -50,7 +47,7 @@ class InputForm extends Component {
       })
   }
   
-  selectType = (contextres, event) => {
+  selectType = (event) => {
     this.setState({ 
       animal_type: event.target.value
     });
@@ -104,7 +101,6 @@ class InputForm extends Component {
               <TextField
                 className="form-field"
                 error = {error}
-                // id="outlined-password-input"
                 type="number"
                 label="Max Age (Years)"
                 variant="outlined"
@@ -117,7 +113,6 @@ class InputForm extends Component {
               <FormControl className="form-field dropdown-breed">
                 <InputLabel htmlFor="demo-customized-select-native">Breed</InputLabel>
                 <NativeSelect
-                  // id="demo-customized-select-native"
                   value={breed}
                   onChange={this.selectBreed}
                 >

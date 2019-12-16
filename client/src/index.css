@@ -11,6 +11,7 @@
   flex-direction: row;
   margin-top: 7%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header-image {
@@ -22,10 +23,12 @@
   color: black;
   font-family: 'Varela Round', Sans-Serif;
   font-size: 1.7em;
-  margin: auto;
+  /* margin: auto; */
   background-color: #BBDEFB;
   padding: 15px 30px;
   border-radius: 20px;
+  height: 50%;
+  margin: auto 0 auto 5%;
 }
 
 .input-form-container {
@@ -90,7 +93,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 8%;
+  margin-top: 3%;
 }
 
 .description {
@@ -131,6 +134,7 @@
 
 .profile-description {
   margin: auto;
+  font-size: 25px;
 }
 
 #arrow-new-search {
@@ -138,6 +142,6 @@
 }
 
 .list-page {
-  margin-top: 7%;
-  margin-bottom: 7%;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }

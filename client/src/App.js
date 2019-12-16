@@ -4,9 +4,9 @@ import ProfilePage from './components/ProfilePage'
 import HomePage from './components/HomePage'
 import PetListPage from './components/PetListPage'
 
-import "./index.css"
-
 import { GlobalContextProvider } from './contexts/GlobalContext'
+
+import "./index.css"
 
 class App extends Component {
   render() {

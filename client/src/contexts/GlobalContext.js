@@ -4,24 +4,21 @@ import axios from 'axios'
 export const GlobalContext = createContext();
 
 export class GlobalContextProvider extends Component {
-  constructor() {
-    super();
-    this.state = {
-      search_data: [],
-      list_path: "",
-      profile_path: "",
-      age: 0,
-      animal_type: "",
-      breed: "",
-      breeds_list: [],
-      zip: 0,
-      name: "",
-      age_years: 0, 
-      age_months: 0,
-      gender: "",
-      location: "",
-      image: ""
-    }
+  state = {
+    search_data: [],
+    list_path: "",
+    profile_path: "",
+    age: 0,
+    animal_type: "",
+    breed: "",
+    breeds_list: [],
+    zip: 0,
+    name: "",
+    age_years: 0, 
+    age_months: 0,
+    gender: "",
+    location: "",
+    image: ""
   }
   
   submitForm = (input_state) => {
@@ -61,7 +58,7 @@ export class GlobalContextProvider extends Component {
       age_years: object.AgeYears,
       age_months: object.AgeMonths,
       gender: object.Gender,
-      location: object.City + " " + object.State,
+      location: object.City + ", " + object.State,
       image: object.PrimaryPhotoUrl
     })
   }
