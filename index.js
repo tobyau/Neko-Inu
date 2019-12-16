@@ -4,13 +4,13 @@ const app = express();
 const bodyParser = require('body-parser');
 var axios = require('axios');
 
-const port = process.env.PORT || 5000;
-
 const { apiKey } = require("./keys");
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 app.post('/api/search', async (req, res) => {
@@ -25,11 +25,12 @@ app.post('/api/search', async (req, res) => {
     console.log(error);
   })
 })
+ 
+ app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
-
-app.get('/', (req, res) => {
-  res.status(200).send('Hello World!');
- });
+const port = process.env.PORT || 5000;
 
 app.listen(port, function () {
  console.log('App listening on port: ' + port);
