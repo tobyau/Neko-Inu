@@ -11,6 +11,7 @@ Tech Stack
 - Express 
 - Bootstrap
 
+
 ## App Setup 
 1. Open your terminal or command line and type: `git clone https://github.com/tobyau/Neko-Inu.git`
 2. go into your project directory `cd Neko-Inu`
@@ -23,6 +24,7 @@ module.exports = {
 }
 ```
 5. Install dependencies by typing `npm install && cd client && npm install` 
+
 
 ## Running the application
 Open a terminal and type the following 
