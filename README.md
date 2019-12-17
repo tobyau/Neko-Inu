@@ -37,4 +37,4 @@ npm run start
 
 Check out the app on http://localhost:8080/ 
 
-![home](/src/assets/home_page.png)
+![home](./client/src/assets/home_page.png)
