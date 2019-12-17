@@ -50,7 +50,6 @@ export class GlobalContextProvider extends Component {
   }
   
   selectProfile = (object) => {
-    console.log("global", object);
     this.setState({
       name: object.Name,
       animal_type: object.PetType,
