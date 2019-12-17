@@ -90,7 +90,7 @@ class InputForm extends Component {
                 <NativeSelect
                   id="demo-customized-select-native"
                   value={animal_type}
-                  onChange={this.selectType.bind(this, context.res)}
+                  onChange={this.selectType}
                 >
                   <option value=""></option>
                   <option value="dog">dog</option>
