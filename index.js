@@ -30,7 +30,7 @@ app.post('/api/search', async (req, res) => {
 // heroku: when in production
 if(process.env.NODE_ENV === 'production'){
   // Express serve up production assets: main.js or main.css
-  app.use(express.static('client/build'));
+  app.use(express.static('./client/build'));
   // If it doesn't recognize route, Express will serve up index.html
   const path = require('path');
   app.get('*', (req, res) => {
