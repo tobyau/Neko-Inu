@@ -37,3 +37,5 @@ npm run dev
 Check out the app on http://localhost:8080/ 
 
 ![home](./client/src/assets/home_page.png)
+![list](./client/src/assets/pet-list.png)
+![profile](./client/src/assets/pet-profile.png)
