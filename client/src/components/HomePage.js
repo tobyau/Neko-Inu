@@ -1,6 +1,6 @@
 import React from 'react'
 import InputForm from './InputForm'
-import SamoHome from '../assets/dogs/samoyed/home1.jpg'
+import SamoHome from '../assets/home1.jpg'
 
 const HomePage = () => {
   return(
