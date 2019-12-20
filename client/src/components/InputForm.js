@@ -6,14 +6,17 @@ import axios from 'axios'
 
 
 class InputForm extends Component {
-  state = {
-    animal_type: "",
-    breed: "",
-    error: false,
-    zip: 0,
-    age: 0,
-    disabled: true,
-    breeds_list: []
+  constructor() {
+    super();
+    this.state = {
+      animal_type: "",
+      breed: "",
+      error: false,
+      zip: 0,
+      age: 0,
+      disabled: true,
+      breeds_list: []
+    }
   }
   
   componentDidUpdate() {
