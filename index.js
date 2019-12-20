@@ -6,7 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 var axios = require('axios');
 
-const { apiKey } = require("./keys");
+const { apiKey } = require("./config/keys");
 
 
 app.use(bodyParser.urlencoded({ extended: false }));

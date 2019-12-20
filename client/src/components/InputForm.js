@@ -21,6 +21,7 @@ class InputForm extends Component {
   }
   
   fetchSearchData = () => {
+    
     const { zip, animal_type, age } = this.state;
     
     if(zip && animal_type && age) {
@@ -50,6 +51,7 @@ class InputForm extends Component {
         })
     }
   }
+  
   
   zipChange = event => {
     this.setState({ zip: event.target.value });
