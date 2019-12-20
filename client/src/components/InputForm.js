@@ -16,35 +16,47 @@ class InputForm extends Component {
     breeds_list: []
   }
   
+  componentDidUpdate() {
+    this.fetchSearchData();
+  }
+  
+  fetchSearchData = () => {
+    const { zip, animal_type, age } = this.state;
+    
+    if(zip && animal_type && age) {
+      const options = {
+        "ZipCode": zip,
+        "SearchRadiusInMiles": 50,
+        "PageNumber": 1,
+        "PetType": animal_type,
+        "AgeYearsMax": age,
+      }
+      
+      var breeds_no_dups = [];
+      
+      axios.post("/api/search", options)
+        .then(res => {        
+          res.data.map((key) => {
+            return key.BreedsForDisplay;
+          }).forEach((item) => { 
+            if (breeds_no_dups.indexOf(item) === -1) breeds_no_dups.push(item) 
+          });
+          
+          this.setState({ breeds_list: breeds_no_dups });
+          
+        })
+        .catch((e) => {
+          console.error(e);
+        })
+    }
+  }
+  
   zipChange = event => {
     this.setState({ zip: event.target.value });
   }
   
   ageChange = event => {
     this.setState({ age: event.target.value });
-    
-    const { animal_type, zip } = this.state;
-    
-    const options = {
-      "ZipCode": zip,
-      "SearchRadiusInMiles": 50,
-      "PageNumber": 1,
-      "PetType": animal_type,
-      "AgeYearsMax": event.target.value,
-    }
-    
-    axios.post("/api/search", options)
-      .then(res => {        
-        var breeds = res.data.map((key) => {
-          return key.BreedsForDisplay;
-        })
-        
-        this.setState({ breeds_list: breeds });
-        
-      })
-      .catch((e) => {
-        console.error(e);
-      })
   }
   
   selectType = (event) => {

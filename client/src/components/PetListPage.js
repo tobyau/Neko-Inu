@@ -13,30 +13,32 @@ class PetListPage extends Component {
   render() {
     return (
       <GlobalContext.Consumer>{(context) => {
-        const { search_data, selectProfile } = context; 
+        const { search_data, selectProfile, breed } = context; 
         
         var pet_cards = search_data.map((object, key) => {
-          return (
-            <div className="card-container" key={key}>
-              <img src={object.PrimaryPhotoUrl} alt="" />
-              <div className="description">
-                <p><b>Name: </b>{object.Name}</p>
-                <p><b>Breed: </b>{object.BreedsForDisplay}</p>
-                <p><b>Age: </b>{object.AgeYears} years and {object.AgeMonths} months old.</p>
-                <p><b>Location: </b>{object.City}, {object.State}</p>
-                <Link 
-                  to="/pet-profile" 
-                  onClick={() => {
-                    this.selected(object, selectProfile);
-                  }}>
-                  <Button
-                      variant="contained"
-                      color="primary"
-                    >More Details</Button>
-                </Link>
+          if(object.BreedsForDisplay === breed) {
+            return (
+              <div className="card-container" key={key}>
+                <img src={object.PrimaryPhotoUrl} alt="" />
+                <div className="description">
+                  <p><b>Name: </b>{object.Name}</p>
+                  <p><b>Breed: </b>{object.BreedsForDisplay}</p>
+                  <p><b>Age: </b>{object.AgeYears} years and {object.AgeMonths} months old.</p>
+                  <p><b>Location: </b>{object.City}, {object.State}</p>
+                  <Link 
+                    to="/pet-profile" 
+                    onClick={() => {
+                      this.selected(object, selectProfile);
+                    }}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                      >More Details</Button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
         })
         
         return (
