@@ -1,15 +1,17 @@
 # Neko & Inu
 Means Cat🐱 and Dog🐶 in Japanese 
+     
 
-Tech Stack 
+**Front-End**
 - Webpack
 - Babel 
 - React
 - React Router
 - Context API for global state management 
+
+**Back-End**
 - Node
 - Express 
-- Bootstrap
 
 
 ## App Setup 
