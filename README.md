@@ -39,12 +39,12 @@ Check out the app on http://localhost:8080/
 ## Home Page
 ![home](./client/src/assets/home_page.png)
 
----
+
 ## Results Page
 
 ![list](./client/src/assets/pet-list.png)
 
----
+
 ## Pet Profile Page
 
 ![profile](./client/src/assets/pet-profile.png)
