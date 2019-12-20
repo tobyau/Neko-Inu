@@ -35,16 +35,15 @@ npm run dev
 ```
 
 Check out the app on http://localhost:8080/ 
+<br>
 
 ## Home Page
 ![home](./client/src/assets/home_page.png)
-
+<br>
 
 ## Results Page
-
 ![list](./client/src/assets/pet-list.png)
-
+<br>
 
 ## Pet Profile Page
-
 ![profile](./client/src/assets/pet-profile.png)
