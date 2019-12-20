@@ -38,7 +38,11 @@ Check out the app on http://localhost:8080/
 
 ## App Images
 ![home](./client/src/assets/home_page.png)
+
 ---
+
 ![list](./client/src/assets/pet-list.png)
+
 ---
+
 ![profile](./client/src/assets/pet-profile.png)
