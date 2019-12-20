@@ -1,12 +1,11 @@
 {
-  "name": "pet-app",
+  "name": "server",
   "version": "1.0.0",
   "description": "Pet App",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm start --prefix client",
     "server": "nodemon index.js",
-    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "heroku-prebuild": "npm install --dev --prefix client"
