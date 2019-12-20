@@ -12,8 +12,6 @@ const { apiKey } = require("./config/keys");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 
 app.post('/api/search', async (req, res) => {
   axios.post('https://getyourpet.com/api/partnerpetsearch/', req.body, {
@@ -27,10 +25,18 @@ app.post('/api/search', async (req, res) => {
     console.log(error);
   })
 })
- 
- app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname +'/client/build/index.html'));
-});
+
+
+// heroku: when in production
+if(process.env.NODE_ENV === 'production'){
+  // Express serve up production assets: main.js or main.css
+  app.use(express.static('client/build'));
+  // If it doesn't recognize route, Express will serve up index.html
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  });
+}
 
 const port = process.env.PORT || 5000;
 
