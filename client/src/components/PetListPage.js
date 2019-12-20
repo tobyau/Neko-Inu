@@ -43,7 +43,7 @@ class PetListPage extends Component {
         
         return (
           <div>
-            <h2 className="text-center list-page">Search Results</h2>
+            <h2 className="text-center list-page">Search Results: {breed}</h2>
             <Link to="/" className="link" id="arrow-new-search"><ArrowBackIcon />Make a new search</Link>
             <div className="cards-list">
               {pet_cards}
