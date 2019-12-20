@@ -12,7 +12,7 @@ const { apiKey } = require("./config/keys");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname + '/dist')));
 
 
 app.post('/api/search', async (req, res) => {
