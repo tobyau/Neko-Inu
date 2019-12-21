@@ -31,7 +31,12 @@ module.exports = {
 ## Running the application
 Open a terminal and type the following 
 ```
-npm run dev 
+npm run server
+```
+Open a terminal and type the following 
+```
+cd client
+npm start
 ```
 
 Check out the app on http://localhost:8080/  
